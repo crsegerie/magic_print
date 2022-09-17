@@ -3,3 +3,6 @@ magic_print.egg-info/PKG-INFO
 magic_print.egg-info/requires.txt
 magic_print.egg-info/top_level.txt
 magic_print.egg-info/SOURCES.txt
+build/**
+dist/**
+magic_print/__pycache__/**

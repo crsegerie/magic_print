@@ -2,7 +2,7 @@ import torch
 import numpy
 
 
-def magic_print(obj, n_indent: int = 0, prefix: str = ""):
+def print_magically(obj, n_indent: int = 0, prefix: str = ""):
     prefix = str("  " * n_indent) + prefix
     if isinstance(obj, torch.Tensor):
         print(prefix, "Tensor of shape:", obj.shape)
@@ -20,15 +20,15 @@ def magic_print(obj, n_indent: int = 0, prefix: str = ""):
 
     if isinstance(obj, dict):
         for k, v in obj.items():
-            magic_print(v, n_indent, k)
+            print_magically(v, n_indent, k)
 
     elif isinstance(obj, tuple):
         for i, v in enumerate(obj):
-            magic_print(v, n_indent, str(i))
+            print_magically(v, n_indent, str(i))
     else:
         try:
             for k, v in obj.__dict__.items():
                 if not callable(obj):
-                    magic_print(v, n_indent, k)
+                    print_magically(v, n_indent, k)
         except:
             print(prefix, "Unknown type:", type(obj))

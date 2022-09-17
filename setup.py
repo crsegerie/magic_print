@@ -6,6 +6,7 @@ setup(
     description='Magic printing nested type',
     url='https://github.com/crsegerie/magic_print',
     author='Charbel-Raphael Segerie',
+    author_email='charbilalo@gmail.com',
     license='BSD 2-clause',
     packages=['magic_print'],
     install_requires=['torch',
